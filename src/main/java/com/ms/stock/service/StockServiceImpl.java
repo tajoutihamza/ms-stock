@@ -11,9 +11,9 @@ import java.util.Optional;
 @Service
 public class StockServiceImpl implements StockService {
 
-    @Autowired
-    private StockRepository stockRepository;
+    private final StockRepository stockRepository;
 
+    public StockServiceImpl (StockRepository stockRepository){this.stockRepository = stockRepository;}
     @Override
     public List<Stock> findAll() {
         return stockRepository.findAll();
